@@ -9,10 +9,7 @@
             <input type="text" v-model="typedTodo" >
             <button>Add</button>
         </form>
-        <div v-if="length ===0" >
-            <h2>Start Adding What you have to do now !!</h2>
-        </div>
-        <single-todo v-for="todo in todos" :key="todo" >{{todo}}</single-todo>
+        <single-todo v-for="todo in todos" :key="todo" :single="todo" ></single-todo>
     </div>
 </template>
 
@@ -23,13 +20,6 @@ import SingleTodo from "./SingleTodo.vue"
 export default {
     inject:["todos"],
     components:{SingleTodo},
-    computed:{
-        isTodoEmpty(){
-            if (this.todos.length===0) {
-                return true
-            }else return false
-        }
-    },
     data() {
         return {
             length: this.todos.length,

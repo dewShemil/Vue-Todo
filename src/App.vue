@@ -13,7 +13,7 @@ export default {
   },
   data() {
     return {
-      todos:["Added One", "Added Two", "Added Three", "Added Four"],
+      todos:[],
     }
   },
   provide(){

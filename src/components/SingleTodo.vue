@@ -1,15 +1,20 @@
 <template>
     <div>
-        <h3><slot></slot></h3>
-        <button>Delete</button>
+        <h3>{{single}}</h3>
+        <button @click="readSlotData" >Delete</button>
     </div>
 </template>
 
 <script>
 export default {
+    props:["single"],
     data() {
         return {
-            
+        }
+    },
+    methods: {
+        readSlotData(){
+            console.log( this.$slot.data[0].text);
         }
     },
 }
