@@ -1,6 +1,7 @@
 <template>
     <div>
-        <h1>Single Todo</h1>
+        <h3><slot></slot></h3>
+        <button>Delete</button>
     </div>
 </template>
 

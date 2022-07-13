@@ -1,13 +1,25 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <all-todos></all-todos>
 </template>
 
 <script>
 
+import AllTodos from "./components/AllTodos.vue"
+
 export default {
   name: 'App',
   components: {
+    AllTodos,
+  },
+  data() {
+    return {
+      todos:["Added One", "Added Two", "Added Three", "Added Four"],
+    }
+  },
+  provide(){
+    return {
+      todos:this.todos,
+    }
   }
 }
 </script>
@@ -21,4 +33,13 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+body{
+  max-width: 800px;
+  margin: 0 auto;
+}
+div+div{
+  border-top: 2px solid #225;
+  margin : 2rem;
+}
+
 </style>
