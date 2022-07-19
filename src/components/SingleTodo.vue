@@ -2,6 +2,7 @@
     <div>
         <h3>{{single}}</h3>
         <button @click="deleteTodo" >Delete</button>
+        <button @click="editTodo" >Edit</button>
     </div>
 </template>
 

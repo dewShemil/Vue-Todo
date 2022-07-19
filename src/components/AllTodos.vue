@@ -7,7 +7,7 @@
             </div>
             <label >Add Here</label>
             <input type="text" v-model="typedTodo" >
-            <button>Add</button>
+            <button class="submit-btn" >Add</button>
         </form>
         <single-todo
          v-for="todo in todos"
