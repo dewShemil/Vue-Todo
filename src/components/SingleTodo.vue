@@ -17,6 +17,9 @@ export default {
     methods: {
         deleteTodo(){
             this.$emit("deletetodo",this.single)
+        },
+        editTodo(){
+            console.log("Edit Todo");
         }
     },
 }
