@@ -9,7 +9,13 @@
             <input type="text" v-model="typedTodo" >
             <button>Add</button>
         </form>
-        <single-todo v-for="todo in todos" :key="todo" :single="todo" ></single-todo>
+        <single-todo
+         v-for="todo in todos"
+         :key="todo"
+         :single="todo"
+         @deletetodo="deleteSingleTodo"
+         >
+        </single-todo>
     </div>
 </template>
 
@@ -29,7 +35,7 @@ export default {
     },
     methods: {
         addTodo(){
-            if (this.typedTodo.trim()==="") {
+            if (this.typedTodo.trim()==="" || (this.todos.indexOf(this.typedTodo) !== -1) ) {
                 this.isInvalid = true
                 this.typedTodo=""
                 setTimeout(() => {
@@ -39,6 +45,9 @@ export default {
                 this.todos.push(this.typedTodo);
                 this.typedTodo=""
             }
+        },
+        deleteSingleTodo(value){
+            this.todos.splice(this.todos.indexOf(value), 1)
         }
     },
 }

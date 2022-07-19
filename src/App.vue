@@ -20,7 +20,7 @@ export default {
     return {
       todos:this.todos,
     }
-  }
+  } 
 }
 </script>
 
