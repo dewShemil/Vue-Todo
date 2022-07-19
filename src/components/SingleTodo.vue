@@ -1,20 +1,21 @@
 <template>
     <div>
         <h3>{{single}}</h3>
-        <button @click="readSlotData" >Delete</button>
+        <button @click="deleteTodo" >Delete</button>
     </div>
 </template>
 
 <script>
 export default {
     props:["single"],
+    inject:["todos"],
     data() {
         return {
         }
     },
     methods: {
-        readSlotData(){
-            console.log( this.$slot.data[0].text);
+        deleteTodo(){
+            this.$emit("deletetodo",this.single)
         }
     },
 }
