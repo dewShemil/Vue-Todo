@@ -22,6 +22,7 @@ export default {
         },
         editTodo(){
             this.isEditingEnabled = true
+            console.log("Edit Clicked : " + this.isEditingEnabled);
         },
         toggleStatus(){
             this.status = !this.status

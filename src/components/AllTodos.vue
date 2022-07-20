@@ -7,7 +7,7 @@
             </div>
             <label >{{isEditing}}</label>
             <input type="text" v-model="typedTodo" >
-            <button class="submit-btn" >Add</button>
+            <button class="submit-btn" >{{isEditing}}</button>
         </form>
         <single-todo
          v-for="todo in todos"
@@ -48,6 +48,11 @@ export default {
         },
         deleteSingleTodo(value){
             this.todos.splice(this.todos.indexOf(value), 1)
+        }
+    },
+    computed: {
+        isEditing(){
+            return this.isEditingEnabled ? "Save" : "Add"
         }
     },
 }
