@@ -1,9 +1,9 @@
 <template>
-    <div class={{completedStyles}} >
-        <h3>{{single}}</h3>
+    <div>
+        <h3 :class=" status ? 'done':''" >{{single}}</h3>
         <button @click="deleteTodo" >Delete</button>
         <button @click="editTodo" >Edit</button>
-        <button class="done" @click="toggleStatus" >{{isCompleted}}</button>
+        <button  @click="toggleStatus" >{{isCompleted}}</button>
     </div>
 </template>
 
