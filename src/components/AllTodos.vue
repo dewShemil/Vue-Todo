@@ -5,7 +5,7 @@
             <div v-if="isInvalid === true" >
                 <h4>Invalid Input,Please Try again</h4>
             </div>
-            <label >Add Here</label>
+            <label >{{isEditing}}</label>
             <input type="text" v-model="typedTodo" >
             <button class="submit-btn" >Add</button>
         </form>
@@ -24,13 +24,13 @@
 import SingleTodo from "./SingleTodo.vue"
 
 export default {
-    inject:["todos"],
+    inject:["todos","isEditingEnabled"],
     components:{SingleTodo},
     data() {
         return {
             length: this.todos.length,
             typedTodo:"",
-            isInvalid:false
+            isInvalid:false,
         }
     },
     methods: {

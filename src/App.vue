@@ -14,12 +14,13 @@ export default {
   data() {
     return {
       todos:[],
+      isEditingEnabled:false,
     }
   },
   provide(){
     return {
       todos:this.todos,
-      isEditMode:this.isEditMode
+      isEditingEnabled:this.isEditingEnabled
     }
   } 
 }
