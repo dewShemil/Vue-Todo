@@ -58,7 +58,15 @@ button{
 .submit-btn{
   background-color: rgb(108, 8, 8);
 }
+
+.clear-btn{
+  margin: 2rem 0.5rem;
+  background-color: #F73D93;
+  color: #293462;
+
+}
+
 .done{
-  color: #D61C4E;
+  color: #3EC70B;
 }
 </style>
