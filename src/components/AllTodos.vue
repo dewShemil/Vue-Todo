@@ -46,9 +46,6 @@ export default {
                 this.typedTodo = ''
             }
         },
-        deleteSingleTodo(value){
-            this.todos.splice(this.todos.indexOf(value), 1)
-        }
     },
     computed: {
         isEditing(){
