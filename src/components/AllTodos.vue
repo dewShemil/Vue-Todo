@@ -42,8 +42,8 @@ export default {
                     this.isInvalid = false
                 }, 3000);
             }else{
-                this.todos.push(this.typedTodo);
-                this.typedTodo=""
+                this.$store.commit("addTodo",{todo : this.typedTodo})
+                this.typedTodo = ''
             }
         },
         deleteSingleTodo(value){
