@@ -13,13 +13,11 @@ export default {
   },
   data() {
     return {
-      todos:[],
       isEditingEnabled:false,
     }
   },
   provide(){
     return {
-      todos:this.todos,
       isEditingEnabled:this.isEditingEnabled
     }
   } 

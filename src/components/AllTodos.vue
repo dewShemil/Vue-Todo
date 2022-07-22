@@ -10,7 +10,7 @@
             <button class="submit-btn" >{{isEditing}}</button>
         </form>
         <single-todo
-         v-for="todo in todos"
+         v-for="todo in $store.state.todos"
          :key="todo"
          :single="todo"
          @deletetodo="deleteSingleTodo"
@@ -28,14 +28,14 @@ export default {
     components:{SingleTodo},
     data() {
         return {
-            length: this.todos.length,
+            length: this.$store.state.todos.length,
             typedTodo:"",
             isInvalid:false,
         }
     },
     methods: {
         addTodo(){
-            if (this.typedTodo.trim()==="" || (this.todos.indexOf(this.typedTodo) !== -1) ) {
+            if (this.typedTodo.trim()==="" || (this.$store.state.todos.indexOf(this.typedTodo) !== -1) ) {
                 this.isInvalid = true
                 this.typedTodo=""
                 setTimeout(() => {
