@@ -1,7 +1,7 @@
 <template>
     <div>
         <h3 :class=" status ? 'done':''" >{{single}}</h3>
-        <button @click="$store.commit('deleteTodo' , {todo : this.todo})" >Delete</button>
+        <button @click="deleteTodo" >Delete</button>
         <button @click="editTodo" >Edit</button>
         <button  @click="toggleStatus" >{{isCompleted}}</button>
     </div>
@@ -17,6 +17,9 @@ export default {
         }
     },
     methods: {
+        deleteTodo(){
+            this.$emit("deletetodo",this.single)
+        },
         editTodo(){
             this.isEditingEnabled = true
             console.log("Edit Clicked : " + this.isEditingEnabled);

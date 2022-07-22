@@ -46,6 +46,9 @@ export default {
                 this.typedTodo = ''
             }
         },
+        deleteSingleTodo(value){
+            this.$store.state.todos.splice(this.$store.state.todos.indexOf(value), 1)
+        }
     },
     computed: {
         isEditing(){
