@@ -16,6 +16,13 @@
          @deletetodo="deleteSingleTodo"
          >
         </single-todo>
+        <button
+          class="clear-btn"
+          @click="$store.commit('clear')"
+          v-if="$store.getters.isclear"
+        >
+            Clear All
+        </button>
     </div>
 </template>
 
