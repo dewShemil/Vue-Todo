@@ -16,6 +16,14 @@ const store = createStore({
         addTodo(state,payload){
             state.todos.push(payload.todo)
         },
+        clear(state){
+            state.todos = []
+        }
+    },
+    getters: {
+        isclear(state) {
+            return (state.todos.length >= 2)
+        }
     }
 })
 
